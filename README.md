@@ -16,7 +16,9 @@
     }
     
     ```
-    
+  
+    _Output_
+
     ```jsx
     {
         "auto": "regular",
