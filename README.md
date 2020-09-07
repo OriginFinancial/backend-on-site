@@ -71,7 +71,7 @@
     
 
 
--  If all the risk answers are false and the user has an income lower than 25k, then he is ineligible for all insurance lines.
+-  Add Umbrella insurance line. If the user got an economic score in any of the four main lines of insurance (life, disability, home & auto), he is eligible to get umbrella insurance. Base rules are applied to it.
     
     _Input_
     
@@ -80,9 +80,9 @@
       "age": 35,
       "dependents": 2,
       "house": {"ownership_status": "owned"},
-      "income": 20000,
+      "income": 0,
       "marital_status": "married",
-      "risk_questions": [0, 0, 0],
+      "risk_questions": [0, 1, 0],
       "vehicle": {"year": 2018}
     }
     
@@ -92,10 +92,10 @@
     
     ```jsx
     {
-        "auto": "ineligible",
+        "auto": "regular",
         "disability": "ineligible",
-        "home": "ineligible",
-        "life": "ineligible"
+        "home": "economic",
+        "life": "regular",
+            "umbrella": "economic"
     }
-
     ```
